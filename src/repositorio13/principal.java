@@ -32,6 +32,12 @@ public class principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtvalor1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtvalor2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtresultado = new javax.swing.JTextField();
+        cmdcalcular = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,10 +54,46 @@ public class principal extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 64, 190, 30));
         jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 150, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 290));
+        jLabel3.setText("INGRESE EL NUMERO DE DIAS: ");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 134, 180, 30));
+        jPanel2.add(txtvalor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 170, 30));
+
+        jLabel4.setText("EL MONTO A PAGAR ES DE: ");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 214, 140, 30));
+
+        txtresultado.setEditable(false);
+        jPanel2.add(txtresultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 180, 30));
+
+        cmdcalcular.setText("jButton1");
+        cmdcalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdcalcularActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmdcalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+
+        jButton2.setText("jButton2");
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 420, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
+        double valor1, valor2, op, op2;
+        
+        valor1 = Double.parseDouble(txtvalor1.getText());
+        valor2 = Double.parseDouble(txtvalor2.getText());
+        
+        op = valor1 * 25000 * valor2;
+        
+        op2 = op * 1.12;
+        
+        txtresultado.setText(String.valueOf(op2));
+        
+        
+    }//GEN-LAST:event_cmdcalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,10 +131,16 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdcalcular;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txtresultado;
     private javax.swing.JTextField txtvalor1;
+    private javax.swing.JTextField txtvalor2;
     // End of variables declaration//GEN-END:variables
 }
